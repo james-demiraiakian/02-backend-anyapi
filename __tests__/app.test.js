@@ -26,7 +26,7 @@ describe('01-backend-anyapi routes', () => {
 
   test('fetch a list of cats', async () => {
     const expected = await Cat.findAll();
-    const res = await request(app.get('api/v1/cats'));
+    const res = await request(app).get('/api/v1/cats');
 
     expect(res.body).toEqual(expected);
   });
