@@ -19,7 +19,7 @@ test('create a cat', async () => {
     age: 8,
     coat: 'Calico',
   };
-  const res = await request(app).post('/api/v1/dogs').send(expected);
+  const res = await request(app).post('/api/v1/cats').send(expected);
 
   expect(res.body).toEqual(expected);
 });
