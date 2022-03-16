@@ -43,4 +43,18 @@ describe('01-backend-anyapi routes', () => {
 
     expect(res.status).toEqual(404);
   });
+
+  test('update cat by id', async () => {
+    const expected = {
+      id: expect.any(Number),
+      name: 'Eowyn',
+      age: 8,
+      coat: 'Calico',
+    };
+    const res = await request(app)
+      .patch('/api/v1/cats/1')
+      .send({ coat: 'White/Calico' });
+
+    expect(res.body).toEqual(expected);
+  });
 });
