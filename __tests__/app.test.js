@@ -37,4 +37,10 @@ describe('01-backend-anyapi routes', () => {
 
     expect(res.body).toEqual({ ...expected });
   });
+
+  test('return 404 for not found', async () => {
+    const res = await request(app).get('/api/v1/cats/counterfeit-cat');
+
+    expect(res.status).toEqual(404);
+  });
 });
