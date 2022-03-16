@@ -49,7 +49,7 @@ describe('01-backend-anyapi routes', () => {
       id: expect.any(Number),
       name: 'Eowyn',
       age: 8,
-      coat: 'Calico',
+      coat: 'White/Calico',
     };
     const res = await request(app)
       .patch('/api/v1/cats/1')
